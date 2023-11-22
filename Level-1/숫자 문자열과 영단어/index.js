@@ -26,12 +26,15 @@ function solution(s) {
       }
     } else if (numArray.includes(isStr)) {
       answer += numArray.findIndex((str) => str === isStr);
-      isStr = "";
+      isStr = sepArray[i];
     } else {
       isStr += sepArray[i];
     }
     console.log("sex", i, isStr);
   }
+  isStr.length > 0
+    ? (answer += numArray.findIndex((str) => str === isStr))
+    : "";
 
   return Number(answer);
 }
